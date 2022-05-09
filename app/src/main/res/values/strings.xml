@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">namariaanimation</string>
+    <string name="temperature_example">26C°</string>
+    <string name="time_example">11:00</string>
+</resources>
