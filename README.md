@@ -3,3 +3,5 @@ Pequeno projeto para reproduzir a animação que vi neste [link](https://www.tik
 
 Ele pensou: "Por que não fazer no figma?"
 Eu pensei: "Por que não fazer no Android?"
+
+![Namaria Animation](https://media.giphy.com/media/q062K0pyhUwcyr9Ww4/giphy.gif "Namaria Animation")
