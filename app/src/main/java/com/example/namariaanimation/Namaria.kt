@@ -3,6 +3,7 @@ package com.example.namariaanimation
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
+import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -23,11 +24,28 @@ class Namaria @JvmOverloads constructor(
     private val hourText: AppCompatTextView by viewProvider(R.id.hour_text)
     private val weatherImage: AppCompatImageView by viewProvider(R.id.weather_image)
     private val temperatureText: AppCompatTextView by viewProvider(R.id.temperature_text)
+    private val locationText: AppCompatTextView by viewProvider(R.id.location_text)
 
     init {
         inflate(context, R.layout.namaria_layout, this)
         hourText.translationX = leftTranslation
         setupHourTimer()
+    }
+
+    fun setHour(hour: String) {
+        hourText.text = hour
+    }
+
+    fun setTemperature(temperature: String) {
+        temperatureText.text = temperature
+    }
+
+    fun setLocationName(location: String) {
+        locationText.text = location
+    }
+
+    fun setWeatherIcon(@DrawableRes weatherIcon: Int) {
+        weatherImage.setImageResource(weatherIcon)
     }
 
     private fun setupHourTimer() {
