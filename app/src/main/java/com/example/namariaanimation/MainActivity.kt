@@ -1,11 +1,38 @@
 package com.example.namariaanimation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
+import com.example.namariaanimation.network.CurrentWeather
+import com.example.namariaanimation.network.WeatherRepository
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.math.roundToInt
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
+
+    private val mainViewModel: MainViewModel by viewModel()
+    private val namaria: Namaria by viewProvider(R.id.namaria)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        mainViewModel.getCurrentWeather().observe(this) { currentWeather ->
+            namaria.setLocationName(currentWeather.name)
+            namaria.setTemperature(currentWeather.main.temp.toTemperatureDegress())
+        }
     }
+}
+
+fun Double.toTemperatureDegress(): String = this.roundToInt().toString() + "°C"
+
+
+class MainViewModel(private val weatherRepository: WeatherRepository): ViewModel() {
+
+    fun getCurrentWeather(): LiveData<CurrentWeather> = liveData {
+        emit(weatherRepository.getCurrentWeather())
+    }
+
 }
