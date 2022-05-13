@@ -8,7 +8,6 @@ import androidx.lifecycle.liveData
 import com.example.namariaanimation.network.CurrentWeather
 import com.example.namariaanimation.network.WeatherRepository
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import kotlin.math.roundToInt
 
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -21,12 +20,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         mainViewModel.getCurrentWeather().observe(this) { currentWeather ->
             namaria.setLocationName(currentWeather.name)
-            namaria.setTemperature(currentWeather.main.temp.toTemperatureDegress())
+            namaria.setTemperature(currentWeather.main.temp.toTemperatureDegrees())
         }
     }
 }
-
-fun Double.toTemperatureDegress(): String = this.roundToInt().toString() + "°C"
 
 
 class MainViewModel(private val weatherRepository: WeatherRepository): ViewModel() {

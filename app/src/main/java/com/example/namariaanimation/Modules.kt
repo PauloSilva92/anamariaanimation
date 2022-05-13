@@ -11,6 +11,16 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 val appModules = module {
 
+    factory {
+        WeatherRepository(get())
+    }
+
+    factory {
+        MainViewModel(get())
+    }
+}
+
+val networkModules = module {
     single {
         OkHttpClient.Builder()
             .addInterceptor (
@@ -28,14 +38,6 @@ val appModules = module {
     }
 
     factory { providerWeatherApi(get()) }
-
-    factory {
-        WeatherRepository(get())
-    }
-
-    factory {
-        MainViewModel(get())
-    }
 }
 
 fun providerWeatherApi(retrofit: Retrofit): WeatherApi = retrofit.create(WeatherApi::class.java)

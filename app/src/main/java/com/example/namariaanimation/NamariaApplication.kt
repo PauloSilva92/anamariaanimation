@@ -14,7 +14,7 @@ class NamariaApplication: Application() {
         startKoin {
             androidLogger()
             androidContext(this@NamariaApplication)
-            modules(appModules)
+            modules(appModules, networkModules)
         }
     }
 }
