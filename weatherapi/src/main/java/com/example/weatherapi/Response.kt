@@ -1,4 +1,4 @@
-package com.example.namariaanimation.network
+package com.example.weatherapi
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

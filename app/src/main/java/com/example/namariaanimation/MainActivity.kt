@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.example.namariaanimation.network.CurrentWeather
-import com.example.namariaanimation.network.WeatherRepository
+import com.example.weatherapi.CurrentWeather
+import com.example.weatherapi.WeatherRepository
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

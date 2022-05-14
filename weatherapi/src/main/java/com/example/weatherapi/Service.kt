@@ -1,4 +1,5 @@
-package com.example.namariaanimation.network
+package com.example.weatherapi
+
 
 import retrofit2.http.GET
 
