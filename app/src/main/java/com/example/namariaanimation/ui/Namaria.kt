@@ -1,4 +1,4 @@
-package com.example.namariaanimation
+package com.example.namariaanimation.ui
 
 import android.content.Context
 import android.util.AttributeSet
@@ -7,6 +7,8 @@ import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.namariaanimation.R
+import com.example.namariaanimation.viewProvider
 
 
 class Namaria @JvmOverloads constructor(

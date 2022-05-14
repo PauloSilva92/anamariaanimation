@@ -1,10 +1,13 @@
-package com.example.namariaanimation
+package com.example.namariaanimation.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
+import com.example.namariaanimation.R
+import com.example.namariaanimation.toTemperatureDegrees
+import com.example.namariaanimation.viewProvider
 import com.example.weatherapi.CurrentWeather
 import com.example.weatherapi.WeatherRepository
 import org.koin.androidx.viewmodel.ext.android.viewModel
