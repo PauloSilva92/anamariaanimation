@@ -10,6 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import java.lang.ref.WeakReference
 import kotlin.reflect.KProperty
 
+/**
+ * Copied from https://github.com/matheus-corregiari/arch-toolkit
+ */
+
 fun <T : View> viewProvider(@IdRes idRes: Int, @IdRes parentRes: Int = NO_ID, viewStubAutoInflate: Boolean = false) =
     ViewProviderDelegate<T>(
         parentRes = parentRes,
